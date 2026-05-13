@@ -1,6 +1,6 @@
 # Extracted PDF images
 
-Source PDF: `s12911-025-02889-w.pdf`
+Source PDF: `assets/source/s12911-025-02889-w.pdf`
 
 Images were extracted from embedded PDF image objects using `pypdf`; JPEG/PNG bytes were written directly without resampling. See `manifest.json` for file size, dimensions, format, and SHA-256 prefix.
 

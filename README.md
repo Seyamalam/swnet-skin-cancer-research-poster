@@ -15,14 +15,27 @@ Team members:
 - Afrin Sultana Niharika
 - Chandnin Barua Jowthi
 
+## GitHub Pages
+
+This repository is GitHub Pages ready. The poster entry point is:
+
+- `index.html`
+
+After enabling Pages from the repository settings with source `main` / root, the poster will be available at:
+
+```text
+https://seyamalam.github.io/swnet-skin-cancer-research-poster/
+```
+
 ## Files
 
-- `poster_tailwind.html` - main Tailwind/CDN poster source.
-- `SWNet_tailwind_poster_ratio.pdf` - final PDF export using the poster's natural printed ratio.
-- `SWNet_research_poster.pdf` - earlier ReportLab-generated poster version.
-- `extracted_images/` - full-quality figures extracted from the source PDF.
-- `s12911-025-02889-w.pdf` - source paper.
-- `s12911-025-02889-w.txt` - extracted paper text.
+- `index.html` - main Tailwind/CDN poster source.
+- `assets/pdfs/SWNet_tailwind_poster_ratio.pdf` - final PDF export using the poster's natural printed ratio.
+- `assets/pdfs/SWNet_research_poster.pdf` - earlier ReportLab-generated poster version.
+- `assets/images/` - full-quality figures extracted from the source PDF.
+- `assets/source/s12911-025-02889-w.pdf` - source paper.
+- `assets/source/s12911-025-02889-w.txt` - extracted paper text.
+- `assets/source/extracted_images_full_quality.zip` - zipped extracted images.
 - `create_research_poster.py` - earlier Python/ReportLab poster generator.
 
 ## Export PDF
@@ -34,13 +47,12 @@ On macOS with Google Chrome installed:
   --headless \
   --disable-gpu \
   --no-pdf-header-footer \
-  --print-to-pdf="$PWD/SWNet_tailwind_poster_ratio.pdf" \
-  "file://$PWD/poster_tailwind.html"
+  --print-to-pdf="$PWD/assets/pdfs/SWNet_tailwind_poster_ratio.pdf" \
+  "file://$PWD/index.html"
 ```
 
-The checked-in `SWNet_tailwind_poster_ratio.pdf` was exported as a single-page PDF sized to the artwork ratio to avoid large empty page margins.
+The checked-in `assets/pdfs/SWNet_tailwind_poster_ratio.pdf` was exported as a single-page PDF sized to the artwork ratio to avoid large empty page margins.
 
 ## Notes
 
 The original paper is open access under a Creative Commons Attribution 4.0 International License. The extracted figures are included for academic poster/assignment use with attribution to the original article.
-
