@@ -1,0 +1,1035 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>SWNet Research Poster</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    extend: {
+                        colors: {
+                            ink: "#14213D",
+                            muted: "#536271",
+                            teal: "#008C95",
+                            green: "#2A9D55",
+                            coral: "#D95D39",
+                            gold: "#E9B44C",
+                            paper: "#FBFCFD",
+                            line: "#D8E2E8",
+                        },
+                        boxShadow: {
+                            poster: "0 12px 40px rgba(20,33,61,.12)",
+                        },
+                    },
+                },
+            };
+        </script>
+        <style>
+            @page {
+                size: 24in 36in;
+                margin: 0;
+            }
+
+            html,
+            body {
+                margin: 0;
+                background: #e9eef2;
+                color: #14213d;
+                font-family:
+                    Inter,
+                    ui-sans-serif,
+                    system-ui,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    "Segoe UI",
+                    sans-serif;
+                font-size: 1.12rem;
+            }
+
+            .poster {
+                width: 24in;
+                min-height: 36in;
+            }
+
+            .masonry {
+                column-count: 4;
+                column-gap: 1rem;
+            }
+
+            .card {
+                display: inline-block;
+                width: 100%;
+                break-inside: avoid;
+                margin: 0 0 1rem;
+                vertical-align: top;
+            }
+
+            .section-title {
+                letter-spacing: 0;
+            }
+
+            .section-title::after {
+                content: "";
+                display: block;
+                width: 7.5rem;
+                height: 2px;
+                margin-top: 0.35rem;
+                background: currentColor;
+                opacity: 0.85;
+            }
+
+            .figure img {
+                display: block;
+                width: 100%;
+                height: auto;
+                max-height: var(--max-h, none);
+                object-fit: contain;
+            }
+
+            .caption {
+                font-size: 0.9rem;
+                line-height: 1.15rem;
+            }
+
+            @media print {
+                html,
+                body {
+                    background: white;
+                }
+                .poster {
+                    box-shadow: none;
+                    zoom: 0.72;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <main class="poster mx-auto bg-paper shadow-poster">
+            <header class="relative bg-ink text-white px-16 pt-12 pb-8">
+                <div class="absolute bottom-0 left-0 h-2 w-[70%] bg-teal"></div>
+                <div
+                    class="absolute bottom-0 right-0 h-2 w-[30%] bg-gold"
+                ></div>
+
+                <h1
+                    class="max-w-[19in] text-[3.35rem] leading-[3.65rem] font-extrabold tracking-normal"
+                >
+                    Towards Unbiased Skin Cancer Classification<br />
+                    Using Deep Feature Fusion
+                </h1>
+
+                <p class="mt-6 text-[1.44rem] text-slate-200">
+                    Ali Atshan Abdulredah | Mohammed A. Fadhel | Laith Alzubaidi
+                    | Ye Duan | Monji Kherallah | Faiza Charfi
+                </p>
+                <p class="mt-1 text-[1.08rem] text-slate-300">
+                    BMC Medical Informatics and Decision Making (2025) 25:48 |
+                    DOI: 10.1186/s12911-025-02889-w
+                </p>
+
+                <div class="mt-5 flex gap-3 text-[1.05rem] font-bold">
+                    <span class="rounded-full bg-teal px-4 py-1"
+                        >SWNet CNN</span
+                    >
+                    <span class="rounded-full bg-green px-4 py-1"
+                        >Feature Fusion</span
+                    >
+                    <span class="rounded-full bg-coral px-4 py-1"
+                        >Grad-CAM XAI</span
+                    >
+                    <span class="rounded-full bg-gold px-4 py-1 text-ink"
+                        >Bias Mitigation</span
+                    >
+                </div>
+            </header>
+
+            <section class="px-12 pt-6">
+                <article class="rounded-lg border border-line bg-white p-6">
+                    <h2
+                        class="section-title text-teal text-[1.72rem] font-extrabold"
+                    >
+                        Abstract
+                    </h2>
+                    <p class="mt-3 text-[1.2rem] leading-[1.62rem] text-ink">
+                        This paper introduces SkinWiseNet (SWNet), a deep
+                        convolutional neural network designed for the detection
+                        and automatic classification of potentially malignant
+                        skin cancer conditions. SWNet optimizes feature
+                        extraction through multiple pathways, emphasizing
+                        network width augmentation to enhance efficiency. The
+                        proposed model addresses potential biases associated
+                        with skin conditions, particularly in individuals with
+                        darker skin tones or excessive hair, by incorporating
+                        feature fusion to assimilate insights from diverse
+                        datasets. Extensive experiments were conducted using
+                        publicly accessible datasets to evaluate SWNet's
+                        effectiveness. This study utilized four
+                        datasets-Mnist-HAM10000, ISIC2019, ISIC2020, and
+                        Melanoma Skin Cancer-comprising skin cancer images
+                        categorized into benign and malignant classes.
+                        Explainable Artificial Intelligence (XAI) techniques,
+                        specifically Grad-CAM, were employed to enhance the
+                        interpretability of the model's decisions. Comparative
+                        analysis was performed with three pre-existing deep
+                        learning networks-EfficientNet, MobileNet, and Darknet.
+                        The results demonstrate SWNet's superiority, achieving
+                        an accuracy of 99.86% and an F1 score of 99.95%,
+                        underscoring its efficacy in gradient propagation and
+                        feature capture across various levels. This research
+                        highlights the significant potential of SWNet in
+                        advancing skin cancer detection and classification,
+                        providing a robust tool for accurate and early
+                        diagnosis. The integration of feature fusion enhances
+                        accuracy and mitigates biases associated with hair and
+                        skin tones. The outcomes of this study contribute to
+                        improved patient outcomes and healthcare practices,
+                        showcasing SWNet's exceptional capabilities in skin
+                        cancer detection and classification.
+                    </p>
+                </article>
+            </section>
+
+            <section class="px-12 pt-5">
+                <article class="rounded-lg border border-line bg-white p-6">
+                    <h2
+                        class="section-title text-teal text-[1.62rem] font-extrabold"
+                    >
+                        Method Flow
+                    </h2>
+                    <div class="mt-5 grid grid-cols-5 items-stretch gap-3">
+                        <div
+                            class="rounded-lg bg-teal px-4 py-4 text-center text-white"
+                        >
+                            <div class="text-[1.35rem] font-extrabold">
+                                Dataset
+                            </div>
+                            <div class="mt-1 text-[.95rem] leading-[1.15rem]">
+                                HAM10000, ISIC, Melanoma Skin
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-lg bg-[#355C7D] px-4 py-4 text-center text-white"
+                        >
+                            <div class="text-[1.35rem] font-extrabold">
+                                Preprocessing
+                            </div>
+                            <div class="mt-1 text-[.95rem] leading-[1.15rem]">
+                                Resize to 224 x 224 RGB
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-lg bg-green px-4 py-4 text-center text-white"
+                        >
+                            <div class="text-[1.35rem] font-extrabold">
+                                SWNet
+                            </div>
+                            <div class="mt-1 text-[.95rem] leading-[1.15rem]">
+                                Multi-path CNN + feature fusion
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-lg bg-coral px-4 py-4 text-center text-white"
+                        >
+                            <div class="text-[1.35rem] font-extrabold">
+                                Grad-CAM
+                            </div>
+                            <div class="mt-1 text-[.95rem] leading-[1.15rem]">
+                                Visual explanation of attention
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-lg bg-gold px-4 py-4 text-center text-ink"
+                        >
+                            <div class="text-[1.35rem] font-extrabold">
+                                Results
+                            </div>
+                            <div class="mt-1 text-[.95rem] leading-[1.15rem]">
+                                Metrics, bias checks, comparison
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="px-12 pt-5">
+                <article
+                    class="overflow-hidden rounded-lg border border-line bg-white"
+                >
+                    <div class="grid grid-cols-[1.1fr_1fr_1.5fr]">
+                        <div class="bg-ink p-6 text-white">
+                            <h2 class="text-[1.55rem] font-extrabold">
+                                Key Findings
+                            </h2>
+                            <p
+                                class="mt-2 text-[1.05rem] leading-[1.3rem] text-slate-200"
+                            >
+                                Strong headline performance, but dataset
+                                robustness remains the central caveat.
+                            </p>
+                        </div>
+                        <div class="grid grid-cols-2">
+                            <div class="bg-teal p-5 text-center text-white">
+                                <div class="text-[2.35rem] font-extrabold">
+                                    99.86%
+                                </div>
+                                <div
+                                    class="text-[1rem] font-extrabold uppercase"
+                                >
+                                    Accuracy
+                                </div>
+                            </div>
+                            <div class="bg-green p-5 text-center text-white">
+                                <div class="text-[2.35rem] font-extrabold">
+                                    99.95%
+                                </div>
+                                <div
+                                    class="text-[1rem] font-extrabold uppercase"
+                                >
+                                    F1 Score
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-[#FFF8E5] p-6 text-ink">
+                            <div
+                                class="text-[1.18rem] font-extrabold text-coral"
+                            >
+                                Cross-dataset caveat
+                            </div>
+                            <p class="mt-2 text-[1.04rem] leading-[1.32rem]">
+                                HAM10000 reports
+                                <strong>81.93% accuracy</strong> but only
+                                <strong>43.79% F1</strong>, showing that the
+                                headline Melanoma Skin result should not be
+                                treated as universal.
+                            </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="masonry px-10 py-4">
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-teal text-[1.62rem] font-extrabold"
+                    >
+                        Problem
+                    </h2>
+                    <p class="mt-3 text-[1.2rem] leading-[1.56rem]">
+                        Manual skin cancer screening is expert-dependent and can
+                        be affected by visual confounders such as skin tone,
+                        hair, imaging artifacts, and lesion variability. The
+                        study asks whether a widened CNN with feature fusion can
+                        improve classification while keeping predictions
+                        inspectable.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-[#355C7D] text-[1.62rem] font-extrabold"
+                    >
+                        Research Questions
+                    </h2>
+                    <ul
+                        class="mt-3 list-disc space-y-2 pl-5 text-[1.16rem] leading-[1.52rem]"
+                    >
+                        <li>
+                            Can a custom CNN outperform EfficientNet, MobileNet,
+                            and Darknet for benign/malignant classification?
+                        </li>
+                        <li>
+                            Can multi-level feature fusion reduce shortcuts from
+                            artifacts, hair, and skin-tone variation?
+                        </li>
+                        <li>
+                            Can Grad-CAM make model attention transparent enough
+                            for clinical review?
+                        </li>
+                    </ul>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-green text-[1.62rem] font-extrabold"
+                    >
+                        Contributions
+                    </h2>
+                    <ul
+                        class="mt-3 list-disc space-y-2 pl-5 text-[1.14rem] leading-[1.5rem]"
+                    >
+                        <li>
+                            Built <strong>SWNet</strong>, a 113-layer CNN with
+                            width expansion and global average pooling.
+                        </li>
+                        <li>
+                            Added concatenation stages to fuse feature maps
+                            across multiple network levels.
+                        </li>
+                        <li>
+                            Benchmarked against EfficientNet, MobileNet, and
+                            Darknet.
+                        </li>
+                        <li>
+                            Used Grad-CAM XAI to visualize prediction evidence.
+                        </li>
+                        <li>
+                            Discussed feature fusion as a strategy for hair and
+                            skin-tone bias mitigation.
+                        </li>
+                    </ul>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-coral text-[1.62rem] font-extrabold"
+                    >
+                        Datasets + Setup
+                    </h2>
+                    <p class="mt-3 text-[1.16rem] leading-[1.52rem]">
+                        <strong>Datasets:</strong> Mnist-HAM10000, ISIC2019,
+                        ISIC2019-2020, Melanoma Skin Cancer.<br />
+                        <strong>Classes:</strong> benign/malignant.
+                        <strong>Input:</strong> 224 x 224 RGB.<br />
+                        <strong>Training:</strong> SGD, lr=0.001, 100 epochs,
+                        80/20 split, MATLAB R2023a.
+                    </p>
+                    <figure
+                        class="figure mt-4 rounded-md border border-line bg-white p-2"
+                    >
+                        <img
+                            src="extracted_images/page-06_image-01_aba2f6863522097b.png"
+                            alt="Dataset image samples"
+                        />
+                        <figcaption class="caption mt-2 text-center text-muted">
+                            Representative benign/malignant samples
+                        </figcaption>
+                    </figure>
+                    <p class="mt-3 text-[1.12rem] leading-[1.44rem] text-muted">
+                        The examples show why the task is not just color
+                        matching: benign and malignant lesions vary in border
+                        irregularity, texture, contrast, and surrounding skin
+                        appearance. This visual diversity motivates both feature
+                        fusion and cross-dataset evaluation.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-teal text-[1.62rem] font-extrabold"
+                    >
+                        Method Summary
+                    </h2>
+                    <p class="mt-3 text-[1.18rem] leading-[1.52rem]">
+                        SWNet widens feature extraction through multiple
+                        convolutional pathways. Features are concatenated at
+                        stages, normalized with BN, activated with ReLU,
+                        globally pooled, regularized with dropout, and
+                        classified with Softmax.
+                    </p>
+                    <p class="mt-3 text-[1.18rem] leading-[1.52rem]">
+                        The model is designed as a directed acyclic graph rather
+                        than a simple sequential chain. This lets information
+                        flow through parallel convolutional routes, then merge
+                        at concatenation points so the classifier receives both
+                        fine-grained local cues and deeper semantic lesion
+                        patterns.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-teal text-[1.62rem] font-extrabold"
+                    >
+                        Methodology Deep Dive
+                    </h2>
+                    <p class="mt-3 text-[1.16rem] leading-[1.56rem]">
+                        The workflow begins with public dermoscopic datasets
+                        organized into benign and malignant classes. Each image
+                        is resized to 224 x 224 pixels so that SWNet and the
+                        comparison models receive consistent input. During
+                        training, convolutional blocks learn lesion features
+                        such as color variation, texture, and border structure,
+                        while batch normalization stabilizes learning and ReLU
+                        introduces nonlinearity.
+                    </p>
+                    <p class="mt-3 text-[1.16rem] leading-[1.56rem]">
+                        SWNet's key methodological idea is width expansion with
+                        feature fusion. Instead of only making the network
+                        deeper, the architecture keeps multiple feature routes
+                        active and concatenates them at several stages. Global
+                        average pooling then summarizes the fused maps before
+                        the fully connected classifier. After training, Grad-CAM
+                        is applied to test images to show whether the model's
+                        evidence is concentrated on medically relevant lesion
+                        regions.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-green text-[1.62rem] font-extrabold"
+                    >
+                        SWNet Architecture
+                    </h2>
+                    <figure
+                        class="figure mt-4 rounded-md border border-line bg-white p-2"
+                    >
+                        <img
+                            class="mx-auto max-w-[100%]"
+                            src="extracted_images/page-11_image-01_a15079069023c922.jpg"
+                            alt="SWNet architecture"
+                        />
+                        <figcaption class="caption mt-2 text-center text-muted">
+                            Widened multi-path CNN
+                        </figcaption>
+                    </figure>
+                    <p class="mt-3 text-[1.12rem] leading-[1.44rem] text-muted">
+                        This is the main technical figure. The repeated
+                        Conv-BN-ReLU blocks extract features, while the
+                        concatenation modules preserve information from parallel
+                        paths. That design is intended to improve gradient flow
+                        and capture useful cues at multiple visual scales.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-[#355C7D] text-[1.62rem] font-extrabold"
+                    >
+                        Classification Pipeline
+                    </h2>
+                    <figure
+                        class="figure mt-4 rounded-md border border-line bg-white p-2"
+                    >
+                        <img
+                            class="mx-auto max-w-[100%]"
+                            src="extracted_images/page-08_image-01_a352bb8b094c358e.jpg"
+                            alt="Classification pipeline"
+                        />
+                        <figcaption class="caption mt-2 text-center text-muted">
+                            Preprocess, train, classify, evaluate
+                        </figcaption>
+                    </figure>
+                    <p class="mt-3 text-[1.12rem] leading-[1.44rem] text-muted">
+                        The pipeline connects data preparation to model
+                        evaluation: images are standardized, passed through
+                        SWNet and baseline networks, classified as
+                        benign/malignant, then assessed using accuracy,
+                        precision, recall, specificity, and F1 score.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-coral text-[1.62rem] font-extrabold"
+                    >
+                        Feature Fusion + XAI
+                    </h2>
+                    <figure
+                        class="figure mt-4 rounded-md border border-line bg-white p-2"
+                    >
+                        <img
+                            src="extracted_images/page-12_image-02_172f69a7fb90266b.png"
+                            alt="Feature fusion diagram"
+                        />
+                        <figcaption class="caption mt-2 text-center text-muted">
+                            Fusion structure
+                        </figcaption>
+                    </figure>
+                    <p class="mt-3 text-[1.14rem] leading-[1.5rem]">
+                        Feature fusion combines information from multiple
+                        sources and model levels to reduce overfitting and
+                        expose the classifier to broader lesion variation.
+                        Grad-CAM highlights the regions that most influence each
+                        predicted class.
+                    </p>
+                    <p class="mt-2 text-[1.12rem] leading-[1.44rem] text-muted">
+                        The fusion diagram is important because the paper treats
+                        fusion as both a performance strategy and a fairness
+                        strategy: broader feature exposure may reduce reliance
+                        on dataset-specific artifacts such as hair, dark
+                        backgrounds, and circular microscope borders.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-ink text-[1.62rem] font-extrabold"
+                    >
+                        Grad-CAM Explanations
+                    </h2>
+                    <figure
+                        class="figure mt-4 rounded-md border border-line bg-white p-2"
+                    >
+                        <img
+                            src="extracted_images/page-13_image-01_7a5960687ec09049.jpg"
+                            alt="Grad-CAM images"
+                        />
+                        <figcaption class="caption mt-2 text-center text-muted">
+                            Model attention across selected layers
+                        </figcaption>
+                    </figure>
+                    <p class="mt-3 text-[1.12rem] leading-[1.44rem] text-muted">
+                        These heatmaps show where SWNet places visual attention.
+                        For clinical decision support, this matters because a
+                        high-confidence model is less useful if it focuses on
+                        irrelevant background artifacts instead of lesion
+                        morphology.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-ink text-[1.62rem] font-extrabold"
+                    >
+                        Architecture Details
+                    </h2>
+                    <ul
+                        class="mt-3 list-disc space-y-2 pl-5 text-[1.12rem] leading-[1.46rem]"
+                    >
+                        <li>
+                            Input layer crops/resizes images to 224 x 224 x 3.
+                        </li>
+                        <li>
+                            Thirty-three 3 x 3 convolution layers; 9,368,192
+                            convolution kernels.
+                        </li>
+                        <li>
+                            Batch normalization between convolution and ReLU
+                            layers.
+                        </li>
+                        <li>
+                            Four concatenation blocks merge parallel feature
+                            streams.
+                        </li>
+                        <li>
+                            Global average pooling plus three fully connected
+                            layers.
+                        </li>
+                        <li>
+                            Dropout reduces overfitting before the final Softmax
+                            classifier.
+                        </li>
+                    </ul>
+                    <figure
+                        class="figure mt-4 rounded-md border border-line bg-white p-2"
+                    >
+                        <img
+                            class="mx-auto max-w-[100%]"
+                            src="extracted_images/page-07_image-01_d76881a5220a615b.jpg"
+                            alt="Transfer learning baselines"
+                        />
+                        <figcaption class="caption mt-2 text-center text-muted">
+                            Transfer-learning baselines
+                        </figcaption>
+                    </figure>
+                </article>
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-green text-[1.62rem] font-extrabold"
+                    >
+                        Headline Results
+                    </h2>
+                    <div class="mt-4 grid grid-cols-2 gap-3">
+                        <div
+                            class="rounded-md border border-line bg-white p-3 text-center"
+                        >
+                            <div
+                                class="text-[2.45rem] font-extrabold text-teal"
+                            >
+                                99.86%
+                            </div>
+                            <div
+                                class="text-[.95rem] font-extrabold uppercase text-muted"
+                            >
+                                Accuracy
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-md border border-line bg-white p-3 text-center"
+                        >
+                            <div
+                                class="text-[2.45rem] font-extrabold text-green"
+                            >
+                                99.95%
+                            </div>
+                            <div
+                                class="text-[.95rem] font-extrabold uppercase text-muted"
+                            >
+                                F1 Score
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-md border border-line bg-white p-3 text-center"
+                        >
+                            <div
+                                class="text-[2.45rem] font-extrabold text-coral"
+                            >
+                                100%
+                            </div>
+                            <div
+                                class="text-[.95rem] font-extrabold uppercase text-muted"
+                            >
+                                Precision
+                            </div>
+                        </div>
+                        <div
+                            class="rounded-md border border-line bg-white p-3 text-center"
+                        >
+                            <div
+                                class="text-[2.45rem] font-extrabold text-gold"
+                            >
+                                20 ms
+                            </div>
+                            <div
+                                class="text-[.95rem] font-extrabold uppercase text-muted"
+                            >
+                                Recognition
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-[1.08rem] leading-[1.38rem] text-muted">
+                        Peak result reported on the Melanoma Skin Cancer
+                        dataset.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-[#355C7D] text-[1.62rem] font-extrabold"
+                    >
+                        Baseline + Robustness
+                    </h2>
+                    <table class="mt-4 w-full border-collapse text-[1.12rem]">
+                        <thead class="bg-ink text-white">
+                            <tr>
+                                <th
+                                    class="border border-line px-2 py-2 text-left"
+                                >
+                                    Model
+                                </th>
+                                <th
+                                    class="border border-line px-2 py-2 text-left"
+                                >
+                                    Acc.
+                                </th>
+                                <th
+                                    class="border border-line px-2 py-2 text-left"
+                                >
+                                    F1
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-line px-2 py-2">
+                                    EfficientNet
+                                </td>
+                                <td class="border border-line px-2 py-2">
+                                    91.88
+                                </td>
+                                <td class="border border-line px-2 py-2">
+                                    86.39
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border border-line px-2 py-2">
+                                    MobileNet
+                                </td>
+                                <td class="border border-line px-2 py-2">
+                                    93.20
+                                </td>
+                                <td class="border border-line px-2 py-2">
+                                    92.23
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="border border-line px-2 py-2">
+                                    Darknet
+                                </td>
+                                <td class="border border-line px-2 py-2">
+                                    94.44
+                                </td>
+                                <td class="border border-line px-2 py-2">
+                                    92.17
+                                </td>
+                            </tr>
+                            <tr class="bg-[#EAF7F5] font-bold">
+                                <td class="border border-line px-2 py-2">
+                                    SWNet
+                                </td>
+                                <td class="border border-line px-2 py-2">
+                                    99.86
+                                </td>
+                                <td class="border border-line px-2 py-2">
+                                    99.95
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="mt-3 text-[1.12rem] leading-[1.44rem]">
+                        <strong>Cross-dataset caveat:</strong> HAM10000 reaches
+                        81.93% accuracy but only 43.79% F1; ISIC2019-2020
+                        reaches 91.09% accuracy and 89.70% F1.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border-2 border-coral bg-[#FFF8F5] p-5"
+                >
+                    <h2
+                        class="section-title text-coral text-[1.62rem] font-extrabold"
+                    >
+                        Why F1 Matters
+                    </h2>
+                    <p class="mt-3 text-[1.14rem] leading-[1.5rem]">
+                        Accuracy can look acceptable when one class dominates
+                        the dataset. F1 combines precision and recall, so it
+                        punishes models that miss too many malignant cases or
+                        over-predict one class.
+                    </p>
+                    <div class="mt-4 grid grid-cols-2 gap-3">
+                        <div class="rounded-md bg-white p-4 text-center">
+                            <div
+                                class="text-[2rem] font-extrabold text-[#355C7D]"
+                            >
+                                81.93%
+                            </div>
+                            <div
+                                class="text-[.95rem] font-bold uppercase text-muted"
+                            >
+                                HAM10000 Accuracy
+                            </div>
+                        </div>
+                        <div class="rounded-md bg-white p-4 text-center">
+                            <div class="text-[2rem] font-extrabold text-coral">
+                                43.79%
+                            </div>
+                            <div
+                                class="text-[.95rem] font-bold uppercase text-muted"
+                            >
+                                HAM10000 F1
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-3 text-[1.08rem] leading-[1.38rem] text-muted">
+                        This gap is one of the poster's most important
+                        critiques: SWNet's peak result is strong, but class
+                        balance and dataset composition can sharply change
+                        practical reliability.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-teal text-[1.62rem] font-extrabold"
+                    >
+                        Training Evidence
+                    </h2>
+                    <div class="mt-4 grid grid-cols-2 gap-3">
+                        <figure
+                            class="figure rounded-md border border-line bg-white p-2"
+                        >
+                            <img
+                                src="extracted_images/page-14_image-01_b5e4d364995fa511.jpg"
+                                alt="Confusion matrix"
+                            />
+                            <figcaption
+                                class="caption mt-2 text-center text-muted"
+                            >
+                                Confusion matrix
+                            </figcaption>
+                        </figure>
+                        <figure
+                            class="figure rounded-md border border-line bg-white p-2"
+                        >
+                            <img
+                                src="extracted_images/page-15_image-01_da630bdaafd588f1.jpg"
+                                alt="Training curves"
+                            />
+                            <figcaption
+                                class="caption mt-2 text-center text-muted"
+                            >
+                                Training curves
+                            </figcaption>
+                        </figure>
+                    </div>
+                    <p class="mt-3 text-[1.12rem] leading-[1.44rem] text-muted">
+                        The confusion matrix summarizes class-level prediction
+                        behavior, while the training curves show how accuracy
+                        and loss evolve over epochs. Together they support the
+                        reported result, but they do not replace external
+                        clinical validation.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-[#355C7D] text-[1.62rem] font-extrabold"
+                    >
+                        Predictions + XAI
+                    </h2>
+                    <figure
+                        class="figure mt-4 rounded-md border border-line bg-white p-2"
+                    >
+                        <img
+                            src="extracted_images/page-16_image-01_2e769929fb5f4742.jpg"
+                            alt="Predictions with XAI"
+                        />
+                        <figcaption class="caption mt-2 text-center text-muted">
+                            Predicted samples with explainable AI overlays
+                        </figcaption>
+                    </figure>
+                    <p class="mt-3 text-[1.12rem] leading-[1.44rem] text-muted">
+                        The prediction examples combine the class output with
+                        visual explanation. This helps communicate not only what
+                        SWNet predicted, but also which lesion regions
+                        contributed most strongly to that prediction.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-coral text-[1.62rem] font-extrabold"
+                    >
+                        Bias Mitigation
+                    </h2>
+                    <p class="mt-3 text-[1.14rem] leading-[1.5rem]">
+                        The study identifies risks from microscope artifacts,
+                        dark backgrounds, underrepresented skin types, and hair
+                        coverage. Feature fusion is framed as a way to broaden
+                        model exposure and reduce shortcut learning.
+                    </p>
+                    <figure
+                        class="figure mt-4 rounded-md border border-line bg-white p-2"
+                    >
+                        <img
+                            class="mx-auto max-w-[62%]"
+                            src="extracted_images/page-20_image-01_f493469a9f926940.jpg"
+                            alt="Hair-related bias challenge"
+                        />
+                        <figcaption class="caption mt-2 text-center text-muted">
+                            Hair-related bias challenge
+                        </figcaption>
+                    </figure>
+                    <p class="mt-3 text-[1.12rem] leading-[1.44rem] text-muted">
+                        Hair can obscure lesion boundaries and introduce
+                        high-contrast patterns that resemble diagnostically
+                        meaningful structures. The paper argues that feature
+                        fusion across diverse datasets can help reduce this kind
+                        of spurious attention.
+                    </p>
+                </article>
+
+                <article
+                    class="card rounded-lg border border-line bg-white p-5"
+                >
+                    <h2
+                        class="section-title text-gold text-[1.62rem] font-extrabold"
+                    >
+                        Limitations + Conclusion
+                    </h2>
+                    <p class="mt-3 text-[1.14rem] leading-[1.5rem]">
+                        <strong>Limitations:</strong> large image
+                        storage/processing cost; tuning complexity as datasets
+                        scale; dependence on preprocessing; low F1 on imbalanced
+                        datasets; need for real-world clinical validation.
+                    </p>
+                    <p class="mt-3 text-[1.14rem] leading-[1.5rem]">
+                        <strong>Future work:</strong> use clinically collected
+                        datasets, improve underrepresented classes, test
+                        alternative architectures, optimize for real-time
+                        deployment, and run longitudinal evaluation.
+                    </p>
+                    <p class="mt-3 text-[1.14rem] leading-[1.5rem]">
+                        <strong>Conclusion:</strong> SWNet is promising and
+                        interpretable, but its practical value depends on
+                        validation across broader, demographically balanced
+                        clinical data.
+                    </p>
+                </article>
+            </section>
+
+            <section class="px-12 pb-5">
+                <article class="rounded-lg border border-line bg-white p-6">
+                    <h2
+                        class="section-title text-ink text-[1.62rem] font-extrabold"
+                    >
+                        References
+                    </h2>
+                    <div
+                        class="mt-3 grid grid-cols-2 gap-5 text-[1.08rem] leading-[1.38rem]"
+                    >
+                        <p>
+                            <strong>Primary paper:</strong> Abdulredah AA,
+                            Fadhel MA, Alzubaidi L, Duan Y, Kherallah M, Charfi
+                            F. Towards unbiased skin cancer classification using
+                            deep feature fusion.
+                            <em>BMC Medical Informatics and Decision Making</em
+                            >. 2025;25:48.
+                        </p>
+                        <p>
+                            <strong>Selected cited works:</strong> [28] Tahir M
+                            et al. DSCC_Net. <em>Cancers</em>. 2023;15:2179.
+                            [30] Waheed S et al. CNN melanoma classification.
+                            <em>Malays J Fundam Appl Sci</em>. 2023;19:299-305.
+                            [31] Dahdouh Y et al. Deep/reinforcement learning
+                            for skin cancer classification. 2023. [37]
+                            MobileNet. [42] EfficientNet. [43] Darknet. [54]
+                            Grad-CAM-based explainable AI.
+                        </p>
+                    </div>
+                    <p class="mt-3 text-[1.08rem] leading-[1.38rem]">
+                        <strong>Data sources:</strong> Kaggle HAM10000,
+                        ISIC2019, ISIC2019-2020 melanoma dataset, and Melanoma
+                        Skin Cancer dataset.
+                    </p>
+                </article>
+            </section>
+
+            <footer class="mx-12 mb-8 rounded-lg bg-ink px-6 py-4 text-white">
+                <p class="text-[1.12rem] leading-[1.48rem]">
+                    <strong>Disclaimer:</strong> This research poster was
+                    created by team <strong>Huntrix</strong> as part of a
+                    Machine Learning assignment. Team members: Touhidul Alam
+                    Seyam, Shafiul Azam Mahin, Afrin Sultana Niharika, and
+                    Chandnin Barua Jowthi.
+                </p>
+            </footer>
+        </main>
+    </body>
+</html>
