@@ -113,35 +113,91 @@
                     class="absolute bottom-0 right-0 h-2 w-[30%] bg-gold"
                 ></div>
 
-                <h1
-                    class="max-w-[19in] text-[3.35rem] leading-[3.65rem] font-extrabold tracking-normal"
-                >
-                    Towards Unbiased Skin Cancer Classification<br />
-                    Using Deep Feature Fusion
-                </h1>
+                <div class="grid grid-cols-[1.55fr_.95fr] gap-8">
+                    <div>
+                        <h1
+                            class="max-w-[18in] text-[3.35rem] leading-[3.65rem] font-extrabold tracking-normal"
+                        >
+                            Towards Unbiased Skin Cancer Classification<br />
+                            Using Deep Feature Fusion
+                        </h1>
 
-                <p class="mt-6 text-[1.44rem] text-slate-200">
-                    Ali Atshan Abdulredah | Mohammed A. Fadhel | Laith Alzubaidi
-                    | Ye Duan | Monji Kherallah | Faiza Charfi
-                </p>
-                <p class="mt-1 text-[1.08rem] text-slate-300">
-                    BMC Medical Informatics and Decision Making (2025) 25:48 |
-                    DOI: 10.1186/s12911-025-02889-w
-                </p>
+                        <p class="mt-6 text-[1.44rem] text-slate-200">
+                            Ali Atshan Abdulredah | Mohammed A. Fadhel | Laith
+                            Alzubaidi | Ye Duan | Monji Kherallah | Faiza Charfi
+                        </p>
+                        <p class="mt-1 text-[1.08rem] text-slate-300">
+                            BMC Medical Informatics and Decision Making (2025)
+                            25:48 | DOI: 10.1186/s12911-025-02889-w
+                        </p>
 
-                <div class="mt-5 flex gap-3 text-[1.05rem] font-bold">
-                    <span class="rounded-full bg-teal px-4 py-1"
-                        >SWNet CNN</span
+                        <div class="mt-5 flex gap-3 text-[1.05rem] font-bold">
+                            <span class="rounded-full bg-teal px-4 py-1"
+                                >SWNet CNN</span
+                            >
+                            <span class="rounded-full bg-green px-4 py-1"
+                                >Feature Fusion</span
+                            >
+                            <span class="rounded-full bg-coral px-4 py-1"
+                                >Grad-CAM XAI</span
+                            >
+                            <span
+                                class="rounded-full bg-gold px-4 py-1 text-ink"
+                                >Bias Mitigation</span
+                            >
+                        </div>
+                    </div>
+
+                    <aside
+                        class="rounded-2xl border border-white/20 bg-gradient-to-br from-teal via-green to-gold p-[2px] shadow-2xl"
                     >
-                    <span class="rounded-full bg-green px-4 py-1"
-                        >Feature Fusion</span
-                    >
-                    <span class="rounded-full bg-coral px-4 py-1"
-                        >Grad-CAM XAI</span
-                    >
-                    <span class="rounded-full bg-gold px-4 py-1 text-ink"
-                        >Bias Mitigation</span
-                    >
+                        <div class="h-full rounded-2xl bg-white/95 p-6 text-ink">
+                            <div
+                                class="inline-flex rounded-full bg-ink px-4 py-1 text-[.9rem] font-extrabold uppercase tracking-wide text-white"
+                            >
+                                Core Contributions
+                            </div>
+                            <div class="mt-5 grid grid-cols-2 gap-3">
+                                <div class="rounded-xl bg-[#E7F7F6] p-4">
+                                    <div class="text-[1.8rem] font-extrabold text-teal">
+                                        113
+                                    </div>
+                                    <p class="text-[.95rem] font-bold leading-[1.15rem]">
+                                        layer SWNet CNN built from scratch
+                                    </p>
+                                </div>
+                                <div class="rounded-xl bg-[#ECF7EF] p-4">
+                                    <div class="text-[1.8rem] font-extrabold text-green">
+                                        4x
+                                    </div>
+                                    <p class="text-[.95rem] font-bold leading-[1.15rem]">
+                                        concatenation stages for feature fusion
+                                    </p>
+                                </div>
+                                <div class="rounded-xl bg-[#FFF7E3] p-4">
+                                    <div class="text-[1.8rem] font-extrabold text-gold">
+                                        XAI
+                                    </div>
+                                    <p class="text-[.95rem] font-bold leading-[1.15rem]">
+                                        Grad-CAM visual explanations
+                                    </p>
+                                </div>
+                                <div class="rounded-xl bg-[#FFF0EA] p-4">
+                                    <div class="text-[1.8rem] font-extrabold text-coral">
+                                        Bias
+                                    </div>
+                                    <p class="text-[.95rem] font-bold leading-[1.15rem]">
+                                        mitigation focus for hair and skin tone
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="mt-5 text-[1rem] leading-[1.28rem] text-muted">
+                                The poster emphasizes SWNet's architecture,
+                                interpretability, and fairness claims while
+                                keeping the cross-dataset F1 caveat visible.
+                            </p>
+                        </div>
+                    </aside>
                 </div>
             </header>
 
@@ -350,39 +406,6 @@
                         <li>
                             Can Grad-CAM make model attention transparent enough
                             for clinical review?
-                        </li>
-                    </ul>
-                </article>
-
-                <article
-                    class="card rounded-lg border border-line bg-white p-5"
-                >
-                    <h2
-                        class="section-title text-green text-[1.62rem] font-extrabold"
-                    >
-                        Contributions
-                    </h2>
-                    <ul
-                        class="mt-3 list-disc space-y-2 pl-5 text-[1.14rem] leading-[1.5rem]"
-                    >
-                        <li>
-                            Built <strong>SWNet</strong>, a 113-layer CNN with
-                            width expansion and global average pooling.
-                        </li>
-                        <li>
-                            Added concatenation stages to fuse feature maps
-                            across multiple network levels.
-                        </li>
-                        <li>
-                            Benchmarked against EfficientNet, MobileNet, and
-                            Darknet.
-                        </li>
-                        <li>
-                            Used Grad-CAM XAI to visualize prediction evidence.
-                        </li>
-                        <li>
-                            Discussed feature fusion as a strategy for hair and
-                            skin-tone bias mitigation.
                         </li>
                     </ul>
                 </article>
