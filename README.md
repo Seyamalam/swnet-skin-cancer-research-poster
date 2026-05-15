@@ -53,6 +53,8 @@ On macOS with Google Chrome installed:
 
 The checked-in `assets/pdfs/SWNet_tailwind_poster_ratio.pdf` was exported as a single-page PDF sized to the artwork ratio to avoid large empty page margins.
 
+Current poster export size: approximately `20.74 x 36.00 in`.
+
 ## Notes
 
 The original paper is open access under a Creative Commons Attribution 4.0 International License. The extracted figures are included for academic poster/assignment use with attribution to the original article.

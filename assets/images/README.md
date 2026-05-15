@@ -30,4 +30,4 @@ Images were extracted from embedded PDF image objects using `pypdf`; JPEG/PNG by
 | Fig. 15 - Feature fusion bias mitigation | `page-19_image-01_c9c2270f942c9bfc.jpg` |
 | Fig. 16 - Hair-related bias challenges | `page-20_image-01_f493469a9f926940.jpg` |
 | Page 21 license/footer asset | `page-21_image-01_82c286a34ae7f95f.png` |
-
+| Generated methodology overview | `swnet-methodology-generated.png` |
